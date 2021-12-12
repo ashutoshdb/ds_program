@@ -1,0 +1,141 @@
+#include<stdio.h>
+
+typedef struct node
+{
+  int data;
+node *next} node;
+node *head;
+
+int
+main ()
+{
+
+
+
+  return 0;
+}
+
+void
+insert_start (int num)
+{
+  node *temp;
+  temp = (node *) malloc (sizeof (node));
+  temp->data = num;
+  if (head == NULL)
+    {
+      head = temp;
+      temp->next = NULL;
+    }
+  else
+    {
+      temp->next = head;
+      head = temp;
+    }
+}
+
+
+void
+insert_end (int num)
+{
+  node *temp1, *temp2;
+  temp1 = (node *) malloc (sizeof (node));
+  temp1->data = num;
+
+  temp2 = head;
+  if (head == NULL)
+    {
+      head = temp1;
+      temp1->next = NULL;
+    }
+  else
+    {
+      while (temp2->next != NULL)
+	{
+	  temp2 = temp2->next;
+	}
+      temp1->next = NULL;
+    temp2->next = temp1}
+}
+
+
+void
+insert_loc (int num, int n)
+{
+  node *temp1, *prev, *curr temp1 = (node *) malloc (sizeof (node));
+  temp1->data = num;
+  curr = head;
+  if (n > (count () + 1) || n <= 0)
+    {
+      printf ("Insertion not  possible");
+    }
+
+  if (n == 1)
+    {
+    insert_start (num)}
+  for (i = 0; i <= n; i++)
+    {
+      prev = curr;
+      curr = prev->next;
+    }
+
+  prev->next = temp;
+  temp->next = curr;
+}
+
+void delete(int num)
+{
+    node *temp, *prev;
+    temp=head;
+    while(temp!=NULL)
+    {
+    if(temp->data==num)
+    {
+        if(temp==head)
+        {
+        head=temp->next;
+        free(temp);
+        return 1;
+        }
+        else
+        {
+        prev->next=temp->next;
+        free(temp);
+        return 1;
+        }
+    }
+    else
+   {
+        prev=temp;
+        temp= temp->next;
+   }
+    }
+    return 0;
+}
+
+void
+display ()
+{
+  node *n;
+  n = head;
+  while (n != NULL)
+    {
+      n = n->next;
+      printf ("the value is %d", n->number);
+
+    }
+     printf("\n");
+}
+
+int
+count ()
+{
+  node *n;
+  n = head;
+  int count = 0;
+  while (n != NULL)
+    {
+      n = n->next;
+      count++;
+    }
+
+return count}

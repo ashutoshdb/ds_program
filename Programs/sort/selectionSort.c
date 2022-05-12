@@ -12,22 +12,21 @@ int main()
    for ( i = 0 ; i < n ; i++ )
       scanf("%d", &arr[i]);
 
+
        for ( i = 0 ; i < n-1 ; i++ )
         {
 	       minimum=i;
-                for ( j = i + 1 ; j < n ; j++ )
-                {
-                        if ( arr[j] < arr[minimum] )
-                        {
-			   minimum=j;
-			}
-		}
+         for ( j = i + 1 ; j < n ; j++ )
+         {
+                  if(arr[j] < arr[minimum])
+                  minimum=j;
+                  }
 			if(minimum!=i)
 			{
-                                temp = arr[minimum] ;
-                                arr[minimum] = arr[i] ;
-                                arr[i] = temp ;
-                        }
+            temp = arr[minimum] ;
+            arr[minimum] = arr[i] ;
+            arr[i] = temp ;
+         }
                 
         }
 
